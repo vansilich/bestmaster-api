@@ -21,6 +21,7 @@ class CreateServicesVariationsTable extends Migration
 
             $table->integer('duration');
             $table->integer('price');
+            $table->string('link');
         });
     }
 

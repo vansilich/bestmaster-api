@@ -18,6 +18,7 @@ class ServiceVariationsResource extends JsonResource
             'id' => $this->id,
             'duration' => $this->duration,
             'price' => $this->price,
+            'link' => $this->link,
         ];
     }
 }

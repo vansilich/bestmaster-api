@@ -21,7 +21,7 @@ class ServicesTableSeeder extends Seeder
             'category_id' => 1,
         ]);
         DB::table('services')->insert([
-            'title' => 'Восстановительный массаж спины*',
+            'title' => 'Лечебный массаж спины*',
             'description' => 'Эффективное устранение причин боли. Борьба с остеохондрозом, грыжей, мигренью, сколиозом и последствиями травм.',
             'video' => 'restorative_back_massage',
             'category_id' => 1,

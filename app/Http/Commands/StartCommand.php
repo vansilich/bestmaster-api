@@ -2,8 +2,10 @@
 
 namespace App\Http\Commands;
 
+use Illuminate\Support\Facades\Log;
 use Telegram\Bot\Actions;
 use Telegram\Bot\Commands\Command;
+use Telegram\Bot\Laravel\Facades\Telegram;
 
 class StartCommand extends Command
 {
@@ -28,6 +30,8 @@ class StartCommand extends Command
 
         $commands = $this->getTelegram()->getCommands();
 
+        Log::debug(print_r($this->update->getChat()->id, true));
+
         $response = '';
         foreach ($commands as $name => $command) {
             $response .= sprintf('/%s - %s' . PHP_EOL, $name, $command->getDescription());
@@ -35,6 +39,6 @@ class StartCommand extends Command
 
         $this->replyWithMessage(['text' => $response]);
 
-        $this->triggerCommand('subscribe');
+//        $this->triggerCommand('subscribe');
     }
 }

@@ -18,6 +18,7 @@ class CreateCertificatesTable extends Migration
 
             $table->string('title');
             $table->integer('price');
+            $table->string('photo');
         });
     }
 

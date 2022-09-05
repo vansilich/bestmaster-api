@@ -11,5 +11,5 @@ class Certificate extends Model
 
     public $timestamps = false;
     protected $table = 'certificates';
-    protected $fillable = ['title', 'price'];
+    protected $fillable = ['title', 'price', 'photo'];
 }
