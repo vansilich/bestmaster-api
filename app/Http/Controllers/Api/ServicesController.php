@@ -20,7 +20,7 @@ class ServicesController extends Controller
 
     public function indexPageServices(): AnonymousResourceCollection
     {
-        $services = Service::whereIn('id', [1, 2, 4])->with('category')->with('variations')->get();
+        $services = Service::whereIn('id', [1, 2, 6])->with('category')->with('variations')->get();
 
         return ServicesResource::collection( $services );
     }
