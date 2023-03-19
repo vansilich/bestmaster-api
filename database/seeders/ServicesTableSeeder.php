@@ -15,7 +15,7 @@ class ServicesTableSeeder extends Seeder
     public function run()
     {
         DB::table('services')->insert([
-            'title' => 'Восстановительный массаж тела*',
+            'title' => 'Спортивный массаж тела*',
             'description' => 'Отлично походит для восстановления после тяжёлых физических нагрузках. Детально прорабатываются все группы мышц и увеличивается подвижность в суставах. Повышается тонус всего организма.',
             'video' => 'body_massage',
             'category_id' => 1,
