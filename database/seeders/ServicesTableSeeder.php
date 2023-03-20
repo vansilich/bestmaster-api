@@ -27,6 +27,12 @@ class ServicesTableSeeder extends Seeder
             'category_id' => 1,
         ]);
         DB::table('services')->insert([
+            'title' => 'Восcтановительный массаж ног *',
+            'description' => 'Детальная работа с мышцами и суставами. Устранение дискомфорта и ограничений при движениях.',
+            'video' => 'restorative_legs_massage',
+            'category_id' => 1,
+        ]);
+        DB::table('services')->insert([
             'title' => 'Скульптурирующий (slim) массаж тела',
             'description' => 'Проработка несовершенных участков тела и общая коррекция фигуры. Включает: лимфодренаж, работа с жировым слоем, повышение тонуса кожи.',
             'video' => 'body_sculpting_massage',
