@@ -65,5 +65,12 @@ class ServicesTableSeeder extends Seeder
             'video' => 'vacuum_cans',
             'category_id' => 2,
         ]);
+
+        DB::table('services')->insert([
+            'title' => 'Массаж головы',
+            'description' => 'Помогает убрать головные боли, нормализовать артериальное давление и улучшит самочувствие.',
+            'video' => 'head_massage',
+            'category_id' => 1,
+        ]);
     }
 }
