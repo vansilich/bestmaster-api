@@ -86,7 +86,7 @@ class ServicesVariationsTableSeeder extends Seeder
             'service_id' => 9,
             'duration' => 30,
             'price' => 3000,
-            'link' => 'https://b689665.yclients.com/company/651678/menu?o=m1860233s9232749',
+            'link' => 'https://b689665.yclients.com/company/651678/menu?o=m1860233s13337856',
         ]);
     }
 }
