@@ -24,14 +24,13 @@ class CertificatesController extends Controller
             'id' => 'required|exists:certificates,id',
             'customer.name' => 'required',
             'customer.phone' => 'required',
-            'customer.email' => 'required|email',
         ]);
 
         $admin_id = config('telegram.admin_id');
 
-        $certificate = Certificate::find( $data['id'] ) ;
+        $certificate = Certificate::find( $data['id'] );
 
-        $text = "=====\nНовый заказ на сертификат $certificate->title\n\nИмя: " . $data['customer']['name'] . "\nПочта: " . $data['customer']['email'] . "\nТелефон: " . $data['customer']['phone'] . "\n=====";
+        $text = "=====\nНовый заказ на сертификат $certificate->title\n\nИмя: " . $data['customer']['name'] . "\nТелефон: " . $data['customer']['phone'] . "\n=====";
 
         Telegram::sendMessage(['chat_id' => $admin_id, 'text' => $text]);
 
@@ -43,12 +42,11 @@ class CertificatesController extends Controller
         $data = $request->validate([
             'customer.name' => 'required',
             'customer.phone' => 'required',
-            'customer.email' => 'required|email',
         ]);
 
         $admin_id = config('telegram.admin_id');
 
-        $text = "=====\nНовый заказ на бумажный сертификат\n\nИмя: " . $data['customer']['name'] . "\nПочта: " . $data['customer']['email'] . "\nТелефон: " . $data['customer']['phone'] . "\n=====";
+        $text = "=====\nНовый заказ на бумажный сертификат\n\nИмя: " . $data['customer']['name'] . "\nТелефон: " . $data['customer']['phone'] . "\n=====";
 
         Telegram::sendMessage(['chat_id' => $admin_id, 'text' => $text]);
 
