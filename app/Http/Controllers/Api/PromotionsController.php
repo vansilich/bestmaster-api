@@ -25,14 +25,21 @@ class PromotionsController extends Controller
             'id' => 'required|exists:promotions,id',
             'customer.name' => 'required',
             'customer.phone' => 'required',
-            'customer.email' => 'required|email',
         ]);
 
         $admin_id = config('telegram.admin_id');
 
         $certificate = Certificate::find( $data['id'] ) ;
 
-        $text = "=====\nНовый заказ на акцию $certificate->title\n\nИмя: " . $data['customer']['name'] . "\nПочта: " . $data['customer']['email'] . "\nТелефон: " . $data['customer']['phone'] . "\n=====";
+        $template = <<<TEXT
+=====
+Новый заказ на акцию %s
+
+Имя: %s
+Телефон: %s
+=====
+TEXT;
+        $text = sprintf($template, $certificate->title, $data['customer']['name'], $data['customer']['phone']);
 
         Telegram::sendMessage(['chat_id' => $admin_id, 'text' => $text]);
 

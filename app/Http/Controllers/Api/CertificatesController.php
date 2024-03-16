@@ -30,7 +30,15 @@ class CertificatesController extends Controller
 
         $certificate = Certificate::find( $data['id'] );
 
-        $text = "=====\nНовый заказ на сертификат $certificate->title\n\nИмя: " . $data['customer']['name'] . "\nТелефон: " . $data['customer']['phone'] . "\n=====";
+        $template = <<<TEXT
+=====
+Новый заказ на сертификат %s
+
+Имя: %s
+Телефон: %s
+=====
+TEXT;
+        $text = sprintf($template, $certificate->title, $data['customer']['name'], $data['customer']['phone']);
 
         Telegram::sendMessage(['chat_id' => $admin_id, 'text' => $text]);
 
@@ -46,7 +54,15 @@ class CertificatesController extends Controller
 
         $admin_id = config('telegram.admin_id');
 
-        $text = "=====\nНовый заказ на бумажный сертификат\n\nИмя: " . $data['customer']['name'] . "\nТелефон: " . $data['customer']['phone'] . "\n=====";
+        $template = <<<TEXT
+=====
+Новый заказ на бумажный сертификат
+
+Имя:  %s
+Телефон: %s
+=====
+TEXT;
+        $text = sprintf($template, $data['customer']['name'], $data['customer']['phone']);
 
         Telegram::sendMessage(['chat_id' => $admin_id, 'text' => $text]);
 
