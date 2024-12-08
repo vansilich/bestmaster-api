@@ -71,7 +71,7 @@ class ServicesVariationsTableSeeder extends Seeder
         DB::table('services_variations')->insert([
             'service_id' => 7,
             'duration' => 15,
-            'price' => 2000,
+            'price' => 1000,
             'link' => 'https://b689665.yclients.com/company/651678/menu?o=m1860233s9232755',
         ]);
 
