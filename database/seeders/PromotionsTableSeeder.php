@@ -16,9 +16,6 @@ class PromotionsTableSeeder extends Seeder
     public function run()
     {
         DB::table('promotions')->insert([
-            'title' => 'СКИДКА 20% НА ПЕРВЫЙ МАССАЖ',
-        ]);
-        DB::table('promotions')->insert([
             'title' => 'СКИДКА 15% НА ЛЮБОЙ КУРС ОТ 10 СЕАНСОВ',
         ]);
         DB::table('promotions')->insert([
